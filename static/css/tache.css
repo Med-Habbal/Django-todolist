@@ -12,6 +12,7 @@ h4{
     padding-top: 20px;
     margin-top: 20px;
     
+    
 }
 
 .petit{
@@ -19,6 +20,7 @@ h4{
 }
 
 .box{
+    margin: center;
     box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);
     -webkit-box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);
     -moz-box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);

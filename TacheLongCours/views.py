@@ -32,17 +32,13 @@ def add_tache(request):
             return redirect(reverse('taches:add_tache'))
     else:
         form = ApplyTach()
-    all_category = Category.objects.all()
+    
     all_type = TypeDeTache.objects.all()
-    return render(request,'add_tache.html',{'form':form , 'categorys':all_category, 'types':all_type})
+    return render(request,'add_tache.html',{'form':form , 'types':all_type})
 
 
-def delete(request,id):
-    tache_id = Tache.objects.get(id=id).delete()
-    return render(request,'test.html',{'tache_id':tache_id})
-
-
-def detail(request,slug):
-    tache_detail = Tache.objects.get(slug=slug)
-    return render(request,'detail.html',{'detail':tache_detail})
+def detail(request,id):
+    tache_detail = Tache.objects.get(id=id)
+    all_type = TypeDeTache.objects.all()
+    return render(request,'detail.html',{'detail':tache_detail, 'types':all_type})
 
