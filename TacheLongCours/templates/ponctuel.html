@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+
+{% block body %}
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>Tâche {{type1}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='container'>
+    <div class="row">
+        <div class='col-lg-8 tach box'>
+            
+                        {% csrf_token %}
+                        {% for tache in tache_type %}
+                        <a href="{% url 'taches:detail' detail.slug %}"><h4>{{ tache.titre }}</h4></a>
+                        <div >
+                            <div class='petit'>
+                                <p> Il faut faire la tâche avant : <i class="fa fa-calendar"></i> {{tache.date_tache|date:'d M Y'}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                
+                
+        </div>
+        
+        <div class='col-lg-6'>
+            
+        </div> 
+    </div>
+</div>
+  
+{% endblock body %}

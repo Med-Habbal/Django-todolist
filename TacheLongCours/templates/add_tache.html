@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% block body %}
+
+
+
+<div class="tache_area">
+    <div class="container" style='margin-top: 60px;'>
+        <div class="row" >
+            <div class="col-lg-8 mx-auto">
+               
+               
+                <div class="apply_job_form white-bg" >
+                    <div class='border-0'>
+                     <h4 class='titrepr'>Ajoutez une tâche</h4>
+                    </div>
+                    <form method="POST" enctype="multipart/form-data">
+                    
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_titre" class='typetext1'>Titre</label>
+                            <input type="text" name="titre" maxlength="50" placeholder="Titre" title="" required="" id="id_titre" class="form-control formul">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_description" class='typetext1'>Description</label>
+                            <textarea name="description" cols="40" rows="10" maxlength="1000" placeholder="Description" title="" required="" id="id_description" class="form-control formul">
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_date_tache" class='typetext1'>Date de tâche</label>
+                            <input type="date" name="date_tache" firstday="1" pattern="=&quot;\d{4}-\d{2}-\d{2}&quot;" format="yyyy-mm-dd" class="form-control formul" placeholder="Date de tâche" title="" id="id_date_tache" lang="pl">
+                        </div>
+                        <div class="form-group">
+                            <label for="id_Type" class='typetext1'>Type</label>
+                            <select name="Type" class="form-control formul" title="" required="" id="id_Type">
+                            <option value="" selected="">---------</option>
+                            {% for type in types %}
+                                <option value="1">{{type}}</option>
+                            {% endfor %}
+                            </select>
+                        </div> 
+                        <div class="form-group">
+                            <label for="id_category" class='typetext1'>Category</label>
+                            <select name="category" class="form-control formul" title="" required="" id="id_category">
+                            <option value="" selected="">---------</option>
+                            {% for category in categorys %}
+                                <option value="1">{{category}}</option>
+                            {% endfor %}
+                            </select>
+                        </div> 
+
+                        {% buttons %}
+                        <button class="btn boxed-btn3 w-100 formul2" style='margin-top: 10px;' type="submit">Post Now</button>
+                        {% endbuttons %}
+                       
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

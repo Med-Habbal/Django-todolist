@@ -1,0 +1,25 @@
+
+
+h3{
+    margin-top: 20px; 
+}
+
+h4{
+    padding-left: 35%;
+}
+
+.tach{
+    padding-top: 20px;
+    margin-top: 20px;
+    
+}
+
+.petit{
+    padding-left: 20%;
+}
+
+.box{
+    box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);
+    -webkit-box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);
+    -moz-box-shadow: 10px 10px 34px 21px rgba(230,202,202,0.97);
+}
